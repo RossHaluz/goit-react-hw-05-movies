@@ -28,7 +28,7 @@ const Movies = () => {
     <>
       <h2>Search film</h2>
       <SearchForm onSubmit={handleSubmit} />
-      <ul>{movies && <SearchMovie movies={movies} />}</ul>
+      {movies && <SearchMovie movies={movies} />}
     </>
   );
 };

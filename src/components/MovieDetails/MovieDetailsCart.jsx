@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   BackButton,
   MovieCartCover,
@@ -11,11 +11,12 @@ import {
 
 const MovieDetailsCart = ({ film }) => {
   const location = useLocation();
-  const locRef = useRef(location.state.from ?? '/movies');
+  const locRef = useRef(location.state?.from ?? '/movies');
 
   return (
     <>
       <BackButton to={locRef.current}>Назад</BackButton>
+
       {film && (
         <MovieCartCover>
           <img
@@ -31,6 +32,9 @@ const MovieDetailsCart = ({ film }) => {
           </MovieCartInfo>
         </MovieCartCover>
       )}
+      <NavLink to="cast">Cast</NavLink>
+      <NavLink to="reviews">Reviews</NavLink>
+      <Outlet />
     </>
   );
 };

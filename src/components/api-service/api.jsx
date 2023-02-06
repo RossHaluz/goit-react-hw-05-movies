@@ -22,3 +22,11 @@ export const searchFilm = async name => {
 
   return data;
 };
+
+export const castCredits = async movieId => {
+  const response = await axios.get(
+    `movie/${movieId}/credits?api_key=${API_KEY}`
+  );
+
+  return response;
+};

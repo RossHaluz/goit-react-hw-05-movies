@@ -1,9 +1,11 @@
+import { FormInput, FormBtn, Form } from './SearchForm.styled';
+
 const SearchForm = ({ onSubmit }) => {
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name="searchName" />
-      <button type="submit">Search</button>
-    </form>
+    <Form onSubmit={onSubmit}>
+      <FormInput type="text" name="searchName" />
+      <FormBtn type="submit">Search</FormBtn>
+    </Form>
   );
 };
 
