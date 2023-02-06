@@ -29,7 +29,7 @@ export const MovieCartInfo = styled.div`
 export const MovieCartInfoOverview = styled.h3`
   margin: 0;
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 export const MovieCartInfoDesc = styled.p`
@@ -37,4 +37,38 @@ export const MovieCartInfoDesc = styled.p`
   font-weight: 400;
   margin-top: 10px;
   font-size: 13px;
+`;
+
+export const MovieListInfoCover = styled.div`
+  margin-top: 30px;
+`;
+
+export const MovieListInfo = styled(NavLink)`
+  text-decoration: none;
+  color: #030303;
+  margin-right: 15px;
+  font-size: 16px;
+
+  :last-of-type {
+    margin-right: 0;
+  }
+
+  &.active {
+    color: orange;
+    border-bottom: 1px solid orange;
+  }
+`;
+
+export const MovieGanreList = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const GanreTitle = styled.h3`
+  margin-bottom: 10px;
+  font-size: 18px;
+`;
+
+export const GanreName = styled.p`
+  margin: 0;
 `;

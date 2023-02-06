@@ -10,6 +10,7 @@ const MovieDetails = () => {
   useEffect(() => {
     GetFilmDetails.getFilmDetails(movieId).then(data => setFilm(data.data));
   }, [movieId]);
+  console.log(film);
 
   return <MovieDetailsCart film={film} />;
 };

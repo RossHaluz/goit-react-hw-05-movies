@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import {
   BackButton,
   MovieCartCover,
@@ -7,6 +7,11 @@ import {
   MovieCartInfo,
   MovieCartInfoOverview,
   MovieCartInfoDesc,
+  MovieListInfo,
+  MovieListInfoCover,
+  MovieGanreList,
+  GanreTitle,
+  GanreName,
 } from './MovieDetailsCart.styled';
 
 const MovieDetailsCart = ({ film }) => {
@@ -26,14 +31,22 @@ const MovieDetailsCart = ({ film }) => {
           />
           <MovieCartInfo>
             <MovieTitle>{film.title}</MovieTitle>
+            <p>User score: {Math.ceil(film.vote_average * 10)}%</p>
             <MovieCartInfoOverview>Overview</MovieCartInfoOverview>
             <MovieCartInfoDesc>{film.overview}</MovieCartInfoDesc>
-            <h3>Genres</h3>
+            <GanreTitle>Genres</GanreTitle>
+            <MovieGanreList>
+              {film.genres.map(genre => {
+                return <GanreName key={genre.id}>{genre.name}</GanreName>;
+              })}
+            </MovieGanreList>
           </MovieCartInfo>
         </MovieCartCover>
       )}
-      <NavLink to="cast">Cast</NavLink>
-      <NavLink to="reviews">Reviews</NavLink>
+      <MovieListInfoCover>
+        <MovieListInfo to="cast">Cast</MovieListInfo>
+        <MovieListInfo to="reviews">Reviews</MovieListInfo>
+      </MovieListInfoCover>
       <Outlet />
     </>
   );
