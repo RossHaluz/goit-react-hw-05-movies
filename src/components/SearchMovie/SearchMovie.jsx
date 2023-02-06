@@ -23,7 +23,7 @@ const SearchMovie = ({ movies }) => {
                 }
                 alt={title}
                 width="300"
-                height="350"
+                height="400"
               />
               {title}
             </MoviesListsItemLink>
