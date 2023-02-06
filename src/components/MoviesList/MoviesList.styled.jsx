@@ -9,6 +9,7 @@ export const MoviesLists = styled.ul`
   justify-content: space-between;
   margin: 0;
   margin-top: 30px;
+  padding: 0;
 `;
 
 export const MoviesListsItem = styled.li`
