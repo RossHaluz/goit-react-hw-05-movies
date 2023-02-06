@@ -17,6 +17,10 @@ const Movies = () => {
     setError(null);
     const form = e.target;
     const searchQuery = form.searchName.value;
+    if (searchQuery === '') {
+      alert('Введіть текст у пошук!');
+      return;
+    }
     setFilms({ name: searchQuery });
   };
 

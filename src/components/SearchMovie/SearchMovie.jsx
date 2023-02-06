@@ -4,6 +4,7 @@ import {
   MoviesListsItem,
   MoviesListsItemLink,
 } from './SearchMovie.styled';
+import DefaultImg from 'components/default.jpg';
 
 const SearchMovie = ({ movies }) => {
   const location = useLocation();
@@ -15,9 +16,14 @@ const SearchMovie = ({ movies }) => {
           <MoviesListsItem key={id}>
             <MoviesListsItemLink to={`${id}`} state={{ from: location }}>
               <img
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                src={
+                  poster_path !== null
+                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                    : DefaultImg
+                }
                 alt={title}
                 width="300"
+                height="350"
               />
               {title}
             </MoviesListsItemLink>

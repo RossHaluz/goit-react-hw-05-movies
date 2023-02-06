@@ -6,7 +6,7 @@ export const MoviesLists = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 25px;
   justify-content: space-between;
   margin: 0;
   margin-top: 30px;
