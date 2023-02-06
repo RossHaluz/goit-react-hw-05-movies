@@ -33,9 +33,7 @@ const Movies = () => {
         if (!data.results.length) {
           throw new Error();
         }
-        setTimeout(() => {
-          setMovies(data.results);
-        }, 3000);
+        setMovies(data.results);
       })
       .catch(error => {
         setError({ error });
